@@ -31,7 +31,7 @@ const menuItems = [
   { 
     id: "a", 
     icon: FileText,
-    title: "แบบประเมินสุขภาพจิต",
+    title: "ทำแบบประเมิน",
     description: "ทำแบบประเมินสุขภาพจิตเบื้องต้น",
     bgColorClass: "bg-blue-500/10",
     iconColorClass: "text-blue-600",
@@ -96,9 +96,9 @@ export default function MenuPage() {
     try {
       localStorage.removeItem("username");
       // Optionally remove other user-related data from local storage
-      localStorage.removeItem("geminiChatHistory"); 
-      const questionsDataLocalStorageKey = "mentalHealthAssessments"; // Ensure this matches your questions.json
-      localStorage.removeItem(questionsDataLocalStorageKey);
+      //localStorage.removeItem("geminiChatHistory"); 
+      //const questionsDataLocalStorageKey = "mentalHealthAssessments"; // Ensure this matches your questions.json
+      //localStorage.removeItem(questionsDataLocalStorageKey);
 
     } catch (error) {
       console.error("Failed to remove data from local storage during logout:", error);
@@ -111,7 +111,7 @@ export default function MenuPage() {
       <div className="w-full max-w-md bg-card rounded-xl shadow-lg m-4 sm:m-6 md:m-8 flex flex-col h-[calc(100vh-4rem)] max-h-[700px]">
         <header className="w-full bg-primary text-primary-foreground p-4 rounded-t-xl shadow-md flex items-center justify-between">
           <div className="w-10 h-10"></div> {/* Placeholder for balance */}
-          <h2 className="text-xl font-semibold font-headline">เมนูหลัก</h2>
+          <h2 className="text-xl font-semibold font-headline">เลือกเมนูที่สนใจ</h2>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" size="icon" className="hover:bg-primary/80">
@@ -119,7 +119,7 @@ export default function MenuPage() {
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-56" align="end">
-              <DropdownMenuLabel>{loggedInUsername || "ชื่อผู้ใช้"}</DropdownMenuLabel>
+              <DropdownMenuLabel>ชื่อผู้ใช้: {loggedInUsername || ""}</DropdownMenuLabel>
               <DropdownMenuSeparator />
               <DropdownMenuItem onClick={() => router.push('/settings')}>
                 <Settings className="mr-2 h-4 w-4" />
@@ -149,10 +149,11 @@ export default function MenuPage() {
             ))}
           </div>
         </ScrollArea>
-        <footer className="p-4 border-t border-border text-center">
-          <Button variant="link" onClick={() => setShowLogoutDialog(true)} className="text-sm text-primary hover:underline p-0 h-auto">
+        <footer className="p-4 border-t border-border text-center text-xs">
+          {/* <Button variant="link" onClick={() => setShowLogoutDialog(true)} className="text-sm text-primary hover:underline p-0 h-auto">
             ออกจากระบบ
-          </Button>
+          </Button> */}
+          Health AI Plus v0.0.1
         </footer>
       </div>
 
@@ -161,7 +162,7 @@ export default function MenuPage() {
           <AlertDialogHeader>
             <AlertDialogTitle>ยืนยันการออกจากระบบ</AlertDialogTitle>
             <AlertDialogDescription>
-              คุณแน่ใจหรือไม่ว่าต้องการออกจากระบบ? การดำเนินการนี้จะล้างข้อมูลการสนทนาและประวัติการประเมินของคุณออกจากเบราว์เซอร์นี้
+              คุณแน่ใจหรือไม่ว่าต้องการออกจากระบบ?
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
