@@ -12,8 +12,11 @@ import { Label } from "@/components/ui/label";
 
 export function LoginForm() {
   const router = useRouter();
-  const [username, setUsername] = React.useState("");
-  const [password, setPassword] = React.useState("");
+  // Default values for testing purposes
+  const defaultUsername = "user";
+  const defaultPassword = "pass";
+  const [username, setUsername] = React.useState(defaultUsername);
+  const [password, setPassword] = React.useState(defaultPassword);
   const [showPassword, setShowPassword] = React.useState(false);
 
   const handleLogin = (e: React.FormEvent) => {
