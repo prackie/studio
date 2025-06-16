@@ -4,7 +4,7 @@
 import { MenuCard } from "@/components/menu/menu-card";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Menu as MenuIcon, UserCircle2, Star, BookOpenText, Settings, Hospital, LineChart, ArrowLeft } from "lucide-react";
+import { Menu as MenuIcon, UserCircle2, Star, BookOpenText, Settings, Hospital, MessageSquare, ArrowLeft } from "lucide-react"; // Added MessageSquare
 import Link from "next/link";
 
 const menuItems = [
@@ -14,13 +14,21 @@ const menuItems = [
   { 
     id: "d", 
     icon: Hospital, 
-    title: "เมนู D", 
+    title: "โรงพยาบาล", 
     description: "รายชื่อโรงพยาบาลในจังหวัดเชียงใหม่", 
     bgColorClass: "bg-yellow-500/10", 
     iconColorClass: "text-yellow-600",
-    href: "/hospitals"
+    href: "/hospitals" // Corrected path
   },
-  { id: "e", icon: LineChart, title: "เมนู E", description: "คำอธิบายสำหรับเมนู E", bgColorClass: "bg-red-500/10", iconColorClass: "text-red-600" },
+  { 
+    id: "e", 
+    icon: MessageSquare, // Changed icon
+    title: "แชทกับ AI", // Changed title
+    description: "พูดคุยกับผู้ช่วย AI Gemini", // Changed description
+    bgColorClass: "bg-red-500/10", 
+    iconColorClass: "text-red-600",
+    href: "/chat" // Added href to the new chat page
+  },
 ];
 
 export default function MenuPage() {
