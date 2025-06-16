@@ -88,15 +88,15 @@ export function LoginForm() {
           </Button>
 
           <div className="text-center">
-            <Link href="/forgot-password" legacyBehavior>
-              <a className="text-sm text-primary hover:underline">ลืมรหัสผ่าน?</a>
+            <Link href="/forgot-password" className="text-sm text-primary hover:underline">
+              ลืมรหัสผ่าน?
             </Link>
           </div>
 
           <p className="text-muted-foreground text-sm text-center">
             ยังไม่มีบัญชี?{" "}
-            <Link href="/register" legacyBehavior>
-              <a className="text-primary hover:underline font-medium">ลงทะเบียนที่นี่</a>
+            <Link href="/register" className="text-primary hover:underline font-medium">
+              ลงทะเบียนที่นี่
             </Link>
           </p>
         </form>

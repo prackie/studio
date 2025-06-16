@@ -11,8 +11,8 @@ export default function ForgotPasswordPage() {
         </CardHeader>
         <CardContent>
           <p className="text-muted-foreground mb-4">หน้านี้ยังอยู่ในระหว่างการพัฒนา</p>
-          <Link href="/" legacyBehavior>
-            <a className="text-primary hover:underline">กลับไปหน้าเข้าสู่ระบบ</a>
+          <Link href="/" className="text-primary hover:underline">
+            กลับไปหน้าเข้าสู่ระบบ
           </Link>
         </CardContent>
       </Card>

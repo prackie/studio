@@ -43,8 +43,8 @@ export default function MenuPage() {
         </div>
       </ScrollArea>
       <footer className="p-4 border-t border-border text-center">
-        <Link href="/" legacyBehavior>
-          <a className="text-sm text-primary hover:underline">ออกจากระบบ</a>
+        <Link href="/" className="text-sm text-primary hover:underline">
+          ออกจากระบบ
         </Link>
       </footer>
     </div>
