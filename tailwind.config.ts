@@ -1,4 +1,5 @@
 import type {Config} from 'tailwindcss';
+import colors from 'tailwindcss/colors';
 
 export default {
   darkMode: ['class'],
@@ -15,6 +16,26 @@ export default {
         code: ['monospace'],
       },
       colors: {
+        // Define your 'rose' primary theme colors here
+        rose: {
+          50: '#FFF1F2',   // Lightest rose
+          100: '#FFE4E6',
+          200: '#FECDD6',
+          300: '#FDA4AF',
+          400: '#FB7185',
+          500: '#F43F5E', // Mid-range rose, could be your primary accent
+          600: '#E11D48',
+          700: '#BE123C',
+          800: '#9F1239',
+          900: '#881337', // Darkest rose
+          950: '#4C0519',
+        },
+        // You can also override default colors or add other custom colors
+        primary: colors.pink['300'], // Example: Set rose-500 as your primary color
+        'primary-dark': colors.pink['600'],
+        'primary-light': colors.pink['600'],
+        ///
+
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {
@@ -25,10 +46,10 @@ export default {
           DEFAULT: 'hsl(var(--popover))',
           foreground: 'hsl(var(--popover-foreground))',
         },
-        primary: {
-          DEFAULT: 'hsl(var(--primary))',
-          foreground: 'hsl(var(--primary-foreground))',
-        },
+        // primary: {
+        //   DEFAULT: 'hsl(var(--primary))',
+        //   foreground: 'hsl(var(--primary-foreground))',
+        // },
         secondary: {
           DEFAULT: 'hsl(var(--secondary))',
           foreground: 'hsl(var(--secondary-foreground))',
