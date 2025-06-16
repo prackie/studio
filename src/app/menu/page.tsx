@@ -4,20 +4,28 @@
 import { MenuCard } from "@/components/menu/menu-card";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Menu as MenuIcon, UserCircle2, Star, BookOpenText, Hospital, MessageSquare, Globe } from "lucide-react"; // Added Globe
+import { Menu as MenuIcon, UserCircle2, BookOpenText, Hospital, MessageSquare, Globe, FileText } from "lucide-react";
 import Link from "next/link";
 
 const menuItems = [
-  { id: "a", icon: Star, title: "เมนู A", description: "คำอธิบายสำหรับเมนู A", bgColorClass: "bg-primary/10", iconColorClass: "text-primary" },
+  { 
+    id: "a", 
+    icon: FileText, // Changed icon
+    title: "แบบประเมินสุขภาพจิต", // Changed title
+    description: "ทำแบบประเมินสุขภาพจิตเบื้องต้น", // Changed description
+    bgColorClass: "bg-teal-500/10", // Example color
+    iconColorClass: "text-teal-600", // Example color
+    href: "/assessment" // Added href
+  },
   { id: "b", icon: BookOpenText, title: "เมนู B", description: "คำอธิบายสำหรับเมนู B", bgColorClass: "bg-accent/10", iconColorClass: "text-accent" },
   { 
     id: "c", 
-    icon: Globe, // Changed icon
-    title: "ข้อมูลสุขภาพจิต", // Changed title
-    description: "จากเว็บไซต์กรมสุขภาพจิต", // Changed description
+    icon: Globe, 
+    title: "ข้อมูลสุขภาพจิต", 
+    description: "จากเว็บไซต์กรมสุขภาพจิต", 
     bgColorClass: "bg-green-500/10", 
     iconColorClass: "text-green-600",
-    href: "/dmh" // Added href
+    href: "/dmh" 
   },
   { 
     id: "d", 
