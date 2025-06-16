@@ -4,14 +4,22 @@
 import { MenuCard } from "@/components/menu/menu-card";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Menu as MenuIcon, UserCircle2, Star, BookOpenText, Settings, Bell, LineChart } from "lucide-react";
+import { Menu as MenuIcon, UserCircle2, Star, BookOpenText, Settings, Hospital, LineChart, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 
 const menuItems = [
   { id: "a", icon: Star, title: "เมนู A", description: "คำอธิบายสำหรับเมนู A", bgColorClass: "bg-primary/10", iconColorClass: "text-primary" },
   { id: "b", icon: BookOpenText, title: "เมนู B", description: "คำอธิบายสำหรับเมนู B", bgColorClass: "bg-accent/10", iconColorClass: "text-accent" },
   { id: "c", icon: Settings, title: "เมนู C", description: "คำอธิบายสำหรับเมนู C", bgColorClass: "bg-green-500/10", iconColorClass: "text-green-600" },
-  { id: "d", icon: Bell, title: "เมนู D", description: "คำอธิบายสำหรับเมนู D", bgColorClass: "bg-yellow-500/10", iconColorClass: "text-yellow-600" },
+  { 
+    id: "d", 
+    icon: Hospital, 
+    title: "เมนู D", 
+    description: "รายชื่อโรงพยาบาลในจังหวัดเชียงใหม่", 
+    bgColorClass: "bg-yellow-500/10", 
+    iconColorClass: "text-yellow-600",
+    href: "/menu/chiangmai-hospitals"
+  },
   { id: "e", icon: LineChart, title: "เมนู E", description: "คำอธิบายสำหรับเมนู E", bgColorClass: "bg-red-500/10", iconColorClass: "text-red-600" },
 ];
 
@@ -38,6 +46,7 @@ export default function MenuPage() {
               description={item.description}
               bgColorClass={item.bgColorClass}
               iconColorClass={item.iconColorClass}
+              href={item.href}
             />
           ))}
         </div>

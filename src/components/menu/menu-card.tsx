@@ -2,6 +2,7 @@
 "use client";
 
 import * as React from "react";
+import { useRouter } from "next/navigation";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import type { LucideIcon } from "lucide-react";
 
@@ -12,11 +13,16 @@ interface MenuCardProps {
   bgColorClass: string;
   iconColorClass: string;
   onClick?: () => void;
+  href?: string;
 }
 
-export function MenuCard({ icon: Icon, title, description, bgColorClass, iconColorClass, onClick }: MenuCardProps) {
+export function MenuCard({ icon: Icon, title, description, bgColorClass, iconColorClass, onClick, href }: MenuCardProps) {
+  const router = useRouter();
+
   const handleClick = () => {
-    if (onClick) {
+    if (href) {
+      router.push(href);
+    } else if (onClick) {
       onClick();
     } else {
       alert(`คุณคลิกที่: ${title}`);
