@@ -4,8 +4,28 @@
 import { MenuCard } from "@/components/menu/menu-card";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Menu as MenuIcon, UserCircle2, BookOpenText, Hospital, MessageSquare, Globe, FileText, History } from "lucide-react"; // Added History
+import { UserCircle2, BookOpenText, Hospital, MessageSquare, Globe, FileText, History, LogOut, Settings } from "lucide-react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
 
 const menuItems = [
   { 
@@ -13,18 +33,18 @@ const menuItems = [
     icon: FileText,
     title: "แบบประเมินสุขภาพจิต",
     description: "ทำแบบประเมินสุขภาพจิตเบื้องต้น",
-    bgColorClass: "bg-blue-500/10", // Changed color
-    iconColorClass: "text-blue-600",  // Changed color
+    bgColorClass: "bg-blue-500/10",
+    iconColorClass: "text-blue-600",
     href: "/assessment"
   },
   { 
     id: "b", 
-    icon: History, // Changed icon
-    title: "ประวัติการประเมิน", // Changed title
-    description: "ดูผลการประเมินสุขภาพจิตย้อนหลัง", // Changed description
-    bgColorClass: "bg-purple-500/10", // Changed color
-    iconColorClass: "text-purple-600", // Changed color
-    href: "/assessment-history" // Added href
+    icon: History, 
+    title: "ประวัติการประเมิน",
+    description: "ดูผลการประเมินสุขภาพจิตย้อนหลัง",
+    bgColorClass: "bg-purple-500/10",
+    iconColorClass: "text-purple-600",
+    href: "/assessment-history"
   },
   { 
     id: "c", 
@@ -56,38 +76,80 @@ const menuItems = [
 ];
 
 export default function MenuPage() {
-  return (
-    <div className="w-full max-w-md bg-card rounded-xl shadow-lg m-4 sm:m-6 md:m-8 flex flex-col h-[calc(100vh-4rem)] max-h-[700px]">
-      <header className="w-full bg-primary text-primary-foreground p-4 rounded-t-xl shadow-md flex items-center justify-between">
-        <Button variant="ghost" size="icon" className="hover:bg-primary/80">
-          {/* <MenuIcon className="h-6 w-6" aria-label="ตัวเลือกเมนู" /> */}
-        </Button>
-        <h2 className="text-xl font-semibold font-headline">เมนูหลัก</h2>
-        <Button variant="ghost" size="icon" className="hover:bg-primary/80">
-          <UserCircle2 className="h-6 w-6" aria-label="โปรไฟล์ผู้ใช้" />
-        </Button>
-      </header>
+  const router = useRouter();
+  const [showLogoutDialog, setShowLogoutDialog] = useState(false);
 
-      <ScrollArea className="flex-grow p-4">
-        <div className="space-y-4">
-          {menuItems.map((item) => (
-            <MenuCard
-              key={item.id}
-              icon={item.icon}
-              title={item.title}
-              description={item.description}
-              bgColorClass={item.bgColorClass}
-              iconColorClass={item.iconColorClass}
-              href={item.href}
-            />
-          ))}
-        </div>
-      </ScrollArea>
-      <footer className="p-4 border-t border-border text-center">
-        <Link href="/" className="text-sm text-primary hover:underline">
-          ออกจากระบบ
-        </Link>
-      </footer>
-    </div>
+  const handleLogout = () => {
+    setShowLogoutDialog(false);
+    router.push("/");
+  };
+
+  return (
+    <>
+      <div className="w-full max-w-md bg-card rounded-xl shadow-lg m-4 sm:m-6 md:m-8 flex flex-col h-[calc(100vh-4rem)] max-h-[700px]">
+        <header className="w-full bg-primary text-primary-foreground p-4 rounded-t-xl shadow-md flex items-center justify-between">
+          <div className="w-10 h-10"></div> {/* Placeholder for balance */}
+          <h2 className="text-xl font-semibold font-headline">เมนูหลัก</h2>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" size="icon" className="hover:bg-primary/80">
+                <UserCircle2 className="h-6 w-6" aria-label="โปรไฟล์ผู้ใช้" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="w-56" align="end">
+              <DropdownMenuLabel>ชื่อผู้ใช้</DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem onClick={() => router.push('/settings')}>
+                <Settings className="mr-2 h-4 w-4" />
+                <span>การตั้งค่า</span>
+              </DropdownMenuItem>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem onClick={() => setShowLogoutDialog(true)}>
+                <LogOut className="mr-2 h-4 w-4" />
+                <span>ออกจากระบบ</span>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </header>
+
+        <ScrollArea className="flex-grow p-4">
+          <div className="space-y-4">
+            {menuItems.map((item) => (
+              <MenuCard
+                key={item.id}
+                icon={item.icon}
+                title={item.title}
+                description={item.description}
+                bgColorClass={item.bgColorClass}
+                iconColorClass={item.iconColorClass}
+                href={item.href}
+              />
+            ))}
+          </div>
+        </ScrollArea>
+        <footer className="p-4 border-t border-border text-center">
+          <Button variant="link" onClick={() => setShowLogoutDialog(true)} className="text-sm text-primary hover:underline p-0 h-auto">
+            ออกจากระบบ
+          </Button>
+        </footer>
+      </div>
+
+      <AlertDialog open={showLogoutDialog} onOpenChange={setShowLogoutDialog}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>ยืนยันการออกจากระบบ</AlertDialogTitle>
+            <AlertDialogDescription>
+              คุณแน่ใจหรือไม่ว่าต้องการออกจากระบบ?
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel onClick={() => setShowLogoutDialog(false)}>ยกเลิก</AlertDialogCancel>
+            <AlertDialogAction onClick={handleLogout}>
+              ออกจากระบบ
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
+    </>
   );
 }
