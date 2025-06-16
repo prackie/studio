@@ -13,8 +13,8 @@ const menuItems = [
     icon: FileText, // Changed icon
     title: "แบบประเมินสุขภาพจิต", // Changed title
     description: "ทำแบบประเมินสุขภาพจิตเบื้องต้น", // Changed description
-    bgColorClass: "bg-teal-500/10", // Example color
-    iconColorClass: "text-teal-600", // Example color
+    bgColorClass: "bg-accent/10", 
+    iconColorClass: "text-accent",
     href: "/assessment" // Added href
   },
   { id: "b", icon: BookOpenText, title: "เมนู B", description: "คำอธิบายสำหรับเมนู B", bgColorClass: "bg-accent/10", iconColorClass: "text-accent" },
