@@ -14,8 +14,8 @@ const menuItems = [
   { 
     id: "d", 
     icon: Hospital, 
-    title: "โรงพยาบาล", 
-    description: "รายชื่อโรงพยาบาลในจังหวัดเชียงใหม่", 
+    title: "รายชื่อโรงพยาบาล", 
+    description: "ในจังหวัดเชียงใหม่", 
     bgColorClass: "bg-yellow-500/10", 
     iconColorClass: "text-yellow-600",
     href: "/hospitals" // Corrected path
@@ -23,8 +23,8 @@ const menuItems = [
   { 
     id: "e", 
     icon: MessageSquare, // Changed icon
-    title: "แชทกับ AI", // Changed title
-    description: "พูดคุยกับผู้ช่วย AI Gemini", // Changed description
+    title: "คุยกับผู้เชี่ยวชาญ", // Changed title
+    description: "พูดคุยกับผู้เชี่ยวชาญด้านสุขภาพ", // Changed description
     bgColorClass: "bg-red-500/10", 
     iconColorClass: "text-red-600",
     href: "/chat" // Added href to the new chat page
