@@ -5,13 +5,16 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowLeft } from 'lucide-react';
 
 // เพิ่มบรรทัดนี้เพื่อ import ข้อมูลจากไฟล์ JSON
-import hospitalsData from '../../data/hostpitals.json';
+import hospitalsData from '../../data/hospitals.json';
 
 // กำหนด Interface สำหรับข้อมูลโรงพยาบาล (เพื่อให้โค้ดเข้าใจโครงสร้างข้อมูล)
 interface Hospital {
-  name: string;
+  id: string;
+  name_th: string;
+  name_en: string;
   address: string;
-  phone: string;
+  type: string;
+  contact: string;
 }
 
 export default function HospitalsPage() {
@@ -41,9 +44,10 @@ export default function HospitalsPage() {
             {/* ตรวจสอบว่า hospitalsData เป็น array และมีข้อมูลก่อน map */}
             {Array.isArray(hospitalsData) && hospitalsData.map((hospital: Hospital, index: number) => (
               <li key={index} className="mb-4 p-4 border rounded-lg shadow-sm">
-                <h2 className="text-lg font-semibold">{hospital.name}</h2>
+                <h2 className="text-lg font-semibold">{hospital.name_th}</h2>
                 <p className="text-muted-foreground">ที่อยู่: {hospital.address}</p>
-                <p className="text-muted-foreground">เบอร์โทรศัพท์: {hospital.phone}</p>
+                <p className="text-muted-foreground">ประเภท: {hospital.type}</p>
+                <p className="text-muted-foreground">ติดต่อ: {hospital.contact}</p>
               </li>
             ))}
           </ul>
