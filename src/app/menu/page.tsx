@@ -95,11 +95,7 @@ export default function MenuPage() {
     setShowLogoutDialog(false);
     try {
       localStorage.removeItem("username");
-      // Optionally remove other user-related data from local storage
-      //localStorage.removeItem("geminiChatHistory"); 
-      //const questionsDataLocalStorageKey = "mentalHealthAssessments"; // Ensure this matches your questions.json
-      //localStorage.removeItem(questionsDataLocalStorageKey);
-
+      // Clearing of specific data like chat/assessment history is now handled in the settings page.
     } catch (error) {
       console.error("Failed to remove data from local storage during logout:", error);
     }
@@ -150,9 +146,6 @@ export default function MenuPage() {
           </div>
         </ScrollArea>
         <footer className="p-4 border-t border-border text-center text-xs">
-          {/* <Button variant="link" onClick={() => setShowLogoutDialog(true)} className="text-sm text-primary hover:underline p-0 h-auto">
-            ออกจากระบบ
-          </Button> */}
           Health AI Plus v0.0.1
         </footer>
       </div>
