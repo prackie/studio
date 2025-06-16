@@ -13,8 +13,8 @@ const menuItems = [
   { 
     id: "c", 
     icon: Globe, // Changed icon
-    title: "กรมสุขภาพจิต", // Changed title
-    description: "เข้าสู่เว็บไซต์กรมสุขภาพจิต", // Changed description
+    title: "ข้อมูลสุขภาพจิต", // Changed title
+    description: "จากเว็บไซต์กรมสุขภาพจิต", // Changed description
     bgColorClass: "bg-green-500/10", 
     iconColorClass: "text-green-600",
     href: "/dmh" // Added href

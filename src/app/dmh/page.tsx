@@ -18,7 +18,7 @@ export default function DmhPage() {
             </Button>
           </Link>
           <CardTitle className="text-xl font-semibold font-headline text-center flex-grow">
-            กรมสุขภาพจิต (DMH)
+            ข้อมูลสุขภาพจิต
           </CardTitle>
           <div className="w-10"></div> {/* Placeholder to balance the title */}
         </CardHeader>
