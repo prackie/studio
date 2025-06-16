@@ -135,7 +135,6 @@ export function MentalHealthAssessment() {
   return (
     <Card className="w-full max-w-lg shadow-lg rounded-xl">
       <CardHeader className="text-center">
-        <CardTitle className="text-2xl font-bold text-primary font-headline">{title}</CardTitle>
         <p className="text-sm text-muted-foreground pt-2">
           คำถามที่ {currentQuestionIndex + 1} จาก {questions.length}
         </p>

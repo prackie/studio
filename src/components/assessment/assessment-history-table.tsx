@@ -65,13 +65,6 @@ export function AssessmentHistoryTable() {
   }
 
   return (
-    <Card className="w-full shadow-lg rounded-xl">
-      <CardHeader>
-        <CardTitle className="text-2xl font-semibold text-primary font-headline text-center">
-          ประวัติการทำแบบประเมิน
-        </CardTitle>
-      </CardHeader>
-      <CardContent>
         <Table>
           <TableCaption>รายการผลการประเมินสุขภาพจิตของคุณ</TableCaption>
           <TableHeader>
@@ -93,12 +86,10 @@ export function AssessmentHistoryTable() {
                 </TableCell>
                 <TableCell className="text-center">{record.totalScore}</TableCell>
                 <TableCell>{record.result.level}</TableCell>
-                <TableCell className="text-right text-sm text-muted-foreground truncate max-w-xs">{record.result.description}</TableCell>
+                <TableCell className="text-sm max-w-xs">{record.result.description}</TableCell>
               </TableRow>
             ))}
           </TableBody>
         </Table>
-      </CardContent>
-    </Card>
   );
 }
