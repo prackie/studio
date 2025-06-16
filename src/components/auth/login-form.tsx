@@ -23,6 +23,13 @@ export function LoginForm() {
     e.preventDefault();
     // Simulate login
     if (username && password) {
+      // Store username in local storage
+      try {
+        localStorage.setItem("username", username);
+      } catch (error) {
+        console.error("Failed to save username to local storage:", error);
+        // Optionally, inform the user or handle the error appropriately
+      }
       router.push("/menu");
     } else {
       // Handle empty fields, show error, etc.

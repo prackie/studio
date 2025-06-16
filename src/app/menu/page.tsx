@@ -7,7 +7,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { UserCircle2, BookOpenText, Hospital, MessageSquare, Globe, FileText, History, LogOut, Settings } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -78,9 +78,31 @@ const menuItems = [
 export default function MenuPage() {
   const router = useRouter();
   const [showLogoutDialog, setShowLogoutDialog] = useState(false);
+  const [loggedInUsername, setLoggedInUsername] = useState<string | null>(null);
+
+  useEffect(() => {
+    try {
+      const storedUsername = localStorage.getItem("username");
+      if (storedUsername) {
+        setLoggedInUsername(storedUsername);
+      }
+    } catch (error) {
+      console.error("Failed to load username from local storage:", error);
+    }
+  }, []);
 
   const handleLogout = () => {
     setShowLogoutDialog(false);
+    try {
+      localStorage.removeItem("username");
+      // Optionally remove other user-related data from local storage
+      localStorage.removeItem("geminiChatHistory"); 
+      const questionsDataLocalStorageKey = "mentalHealthAssessments"; // Ensure this matches your questions.json
+      localStorage.removeItem(questionsDataLocalStorageKey);
+
+    } catch (error) {
+      console.error("Failed to remove data from local storage during logout:", error);
+    }
     router.push("/");
   };
 
@@ -97,7 +119,7 @@ export default function MenuPage() {
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-56" align="end">
-              <DropdownMenuLabel>ชื่อผู้ใช้</DropdownMenuLabel>
+              <DropdownMenuLabel>{loggedInUsername || "ชื่อผู้ใช้"}</DropdownMenuLabel>
               <DropdownMenuSeparator />
               <DropdownMenuItem onClick={() => router.push('/settings')}>
                 <Settings className="mr-2 h-4 w-4" />
@@ -139,7 +161,7 @@ export default function MenuPage() {
           <AlertDialogHeader>
             <AlertDialogTitle>ยืนยันการออกจากระบบ</AlertDialogTitle>
             <AlertDialogDescription>
-              คุณแน่ใจหรือไม่ว่าต้องการออกจากระบบ?
+              คุณแน่ใจหรือไม่ว่าต้องการออกจากระบบ? การดำเนินการนี้จะล้างข้อมูลการสนทนาและประวัติการประเมินของคุณออกจากเบราว์เซอร์นี้
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
