@@ -60,7 +60,7 @@ export default function MenuPage() {
     <div className="w-full max-w-md bg-card rounded-xl shadow-lg m-4 sm:m-6 md:m-8 flex flex-col h-[calc(100vh-4rem)] max-h-[700px]">
       <header className="w-full bg-primary text-primary-foreground p-4 rounded-t-xl shadow-md flex items-center justify-between">
         <Button variant="ghost" size="icon" className="hover:bg-primary/80">
-          <MenuIcon className="h-6 w-6" aria-label="ตัวเลือกเมนู" />
+          {/* <MenuIcon className="h-6 w-6" aria-label="ตัวเลือกเมนู" /> */}
         </Button>
         <h2 className="text-xl font-semibold font-headline">เมนูหลัก</h2>
         <Button variant="ghost" size="icon" className="hover:bg-primary/80">
