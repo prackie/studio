@@ -4,24 +4,32 @@
 import { MenuCard } from "@/components/menu/menu-card";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Menu as MenuIcon, UserCircle2, BookOpenText, Hospital, MessageSquare, Globe, FileText } from "lucide-react";
+import { Menu as MenuIcon, UserCircle2, BookOpenText, Hospital, MessageSquare, Globe, FileText, History } from "lucide-react"; // Added History
 import Link from "next/link";
 
 const menuItems = [
   { 
     id: "a", 
-    icon: FileText, // Changed icon
-    title: "แบบประเมินสุขภาพจิต", // Changed title
-    description: "ทำแบบประเมินสุขภาพจิตเบื้องต้น", // Changed description
-    bgColorClass: "bg-accent/10", 
-    iconColorClass: "text-accent",
-    href: "/assessment" // Added href
+    icon: FileText,
+    title: "แบบประเมินสุขภาพจิต",
+    description: "ทำแบบประเมินสุขภาพจิตเบื้องต้น",
+    bgColorClass: "bg-blue-500/10", // Changed color
+    iconColorClass: "text-blue-600",  // Changed color
+    href: "/assessment"
   },
-  { id: "b", icon: BookOpenText, title: "เมนู B", description: "คำอธิบายสำหรับเมนู B", bgColorClass: "bg-accent/10", iconColorClass: "text-accent" },
+  { 
+    id: "b", 
+    icon: History, // Changed icon
+    title: "ประวัติการประเมิน", // Changed title
+    description: "ดูผลการประเมินสุขภาพจิตย้อนหลัง", // Changed description
+    bgColorClass: "bg-purple-500/10", // Changed color
+    iconColorClass: "text-purple-600", // Changed color
+    href: "/assessment-history" // Added href
+  },
   { 
     id: "c", 
     icon: Globe, 
-    title: "ข้อมูลสุขภาพจิต", 
+    title: "ข้อมูลสุขภาพจิต (DMH)", 
     description: "จากเว็บไซต์กรมสุขภาพจิต", 
     bgColorClass: "bg-green-500/10", 
     iconColorClass: "text-green-600",
