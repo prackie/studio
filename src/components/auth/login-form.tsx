@@ -34,7 +34,7 @@ export function LoginForm() {
   return (
     <Card className="w-full max-w-md bg-card shadow-lg rounded-xl m-4 sm:m-6 md:m-8">
       <CardHeader className="text-center">
-        <CardTitle className="text-4xl font-bold text-primary font-headline">My App</CardTitle>
+        <CardTitle className="text-4xl font-bold text-primary font-headline">Health AI Plus+</CardTitle>
         <CardDescription className="text-muted-foreground mt-2">ยินดีต้อนรับ</CardDescription>
       </CardHeader>
       <CardContent>
