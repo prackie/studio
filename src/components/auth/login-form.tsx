@@ -14,7 +14,7 @@ export function LoginForm() {
   const router = useRouter();
   // Default values for testing purposes
   const defaultUsername = "user";
-  const defaultPassword = "pass";
+  const defaultPassword = "";
   const [username, setUsername] = React.useState(defaultUsername);
   const [password, setPassword] = React.useState(defaultPassword);
   const [showPassword, setShowPassword] = React.useState(false);
