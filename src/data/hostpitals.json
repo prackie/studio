@@ -1,0 +1,6 @@
+[
+    { "id": "hosp1", "name_th": "โรงพยาบาลมหาราชนครเชียงใหม่ (รพ.สวนดอก)", "name_en": "Maharaj Nakorn Chiang Mai Hospital (Suandok Hospital)", "address": "110 ถนนอินทวโรรส ตำบลศรีภูมิ อำเภอเมืองเชียงใหม่ เชียงใหม่ 50200", "type": "รัฐบาล", "contact": "053-936XXX" },
+    { "id": "hosp2", "name_th": "โรงพยาบาลนครพิงค์", "name_en": "Nakornping Hospital", "address": "159 หมู่ 10 ถนนโชตนา ตำบลดอนแก้ว อำเภอแม่ริม เชียงใหม่ 50180", "type": "รัฐบาล", "contact": "053-999XXX" },
+    { "id": "hosp3", "name_th": "โรงพยาบาลกรุงเทพเชียงใหม่", "name_en": "Bangkok Hospital Chiang Mai", "address": "88 หมู่ 6 ถนนเชียงใหม่-ลำปาง ตำบลหนองป่าครั่ง อำเภอเมืองเชียงใหม่ เชียงใหม่ 50000", "type": "เอกชน", "contact": "052-089XXX" },
+    { "id": "hosp4", "name_th": "โรงพยาบาลเชียงใหม่ราม", "name_en": "Chiangmai Ram Hospital", "address": "8 ถนนบุญเรืองฤทธิ์ ตำบลศรีภูมิ อำเภอเมืองเชียงใหม่ เชียงใหม่ 50200", "type": "เอกชน", "contact": "053-920XXX" }
+]

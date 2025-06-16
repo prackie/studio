@@ -18,7 +18,7 @@ const menuItems = [
     description: "รายชื่อโรงพยาบาลในจังหวัดเชียงใหม่", 
     bgColorClass: "bg-yellow-500/10", 
     iconColorClass: "text-yellow-600",
-    href: "/menu/chiangmai-hospitals"
+    href: "/hospitals"
   },
   { id: "e", icon: LineChart, title: "เมนู E", description: "คำอธิบายสำหรับเมนู E", bgColorClass: "bg-red-500/10", iconColorClass: "text-red-600" },
 ];
