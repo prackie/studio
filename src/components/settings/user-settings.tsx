@@ -93,20 +93,6 @@ export function UserSettings() {
               </div>
             </div>
           </div>
-
-          <div className="mt-6">
-            <h3 className="text-lg font-medium mb-2">การตั้งค่าอื่นๆ (เร็วๆ นี้)</h3>
-            <div className="space-y-3">
-              <div className="flex items-center justify-between p-4 border rounded-lg bg-muted/30">
-                <span className="text-sm font-medium">เปลี่ยนธีม</span>
-                <span className="text-xs text-muted-foreground">ยังไม่พร้อมใช้งาน</span>
-              </div>
-              <div className="flex items-center justify-between p-4 border rounded-lg bg-muted/30">
-                <span className="text-sm font-medium">จัดการการแจ้งเตือน</span>
-                <span className="text-xs text-muted-foreground">ยังไม่พร้อมใช้งาน</span>
-              </div>
-            </div>
-          </div>
         </CardContent>
       </Card>
 
