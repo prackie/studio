@@ -4,13 +4,21 @@
 import { MenuCard } from "@/components/menu/menu-card";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Menu as MenuIcon, UserCircle2, Star, BookOpenText, Settings, Hospital, MessageSquare, ArrowLeft } from "lucide-react"; // Added MessageSquare
+import { Menu as MenuIcon, UserCircle2, Star, BookOpenText, Hospital, MessageSquare, Globe } from "lucide-react"; // Added Globe
 import Link from "next/link";
 
 const menuItems = [
   { id: "a", icon: Star, title: "เมนู A", description: "คำอธิบายสำหรับเมนู A", bgColorClass: "bg-primary/10", iconColorClass: "text-primary" },
   { id: "b", icon: BookOpenText, title: "เมนู B", description: "คำอธิบายสำหรับเมนู B", bgColorClass: "bg-accent/10", iconColorClass: "text-accent" },
-  { id: "c", icon: Settings, title: "เมนู C", description: "คำอธิบายสำหรับเมนู C", bgColorClass: "bg-green-500/10", iconColorClass: "text-green-600" },
+  { 
+    id: "c", 
+    icon: Globe, // Changed icon
+    title: "กรมสุขภาพจิต", // Changed title
+    description: "เข้าสู่เว็บไซต์กรมสุขภาพจิต", // Changed description
+    bgColorClass: "bg-green-500/10", 
+    iconColorClass: "text-green-600",
+    href: "/dmh" // Added href
+  },
   { 
     id: "d", 
     icon: Hospital, 
@@ -18,16 +26,16 @@ const menuItems = [
     description: "ในจังหวัดเชียงใหม่", 
     bgColorClass: "bg-yellow-500/10", 
     iconColorClass: "text-yellow-600",
-    href: "/hospitals" // Corrected path
+    href: "/hospitals"
   },
   { 
     id: "e", 
-    icon: MessageSquare, // Changed icon
-    title: "คุยกับผู้เชี่ยวชาญ", // Changed title
-    description: "พูดคุยกับผู้เชี่ยวชาญด้านสุขภาพ", // Changed description
+    icon: MessageSquare, 
+    title: "คุยกับผู้เชี่ยวชาญ", 
+    description: "พูดคุยกับผู้เชี่ยวชาญด้านสุขภาพ", 
     bgColorClass: "bg-red-500/10", 
     iconColorClass: "text-red-600",
-    href: "/chat" // Added href to the new chat page
+    href: "/chat"
   },
 ];
 
