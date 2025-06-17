@@ -13,7 +13,7 @@ import { Label } from "@/components/ui/label";
 export function LoginForm() {
   const router = useRouter();
   // Default values for testing purposes
-  const defaultUsername = "user";
+  const defaultUsername = "user01";
   const defaultPassword = "";
   const [username, setUsername] = React.useState(defaultUsername);
   const [password, setPassword] = React.useState(defaultPassword);
@@ -89,6 +89,8 @@ export function LoginForm() {
               </Button>
             </div>
           </div>
+
+          <div className="w-full text-center text-xs">ผู้ใช้: user01 / รหัสผ่าน: 1234 (สำหรับทดสอบเท่านั้น)</div>
           
           <Button
             type="submit"
