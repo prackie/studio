@@ -104,7 +104,7 @@ export default function MenuPage() {
 
   return (
     <>
-      <div className="w-full max-w-md bg-card rounded-xl shadow-lg m-4 mt-0 sm:m-6 sm:mt-0 md:m-8 md:mt-0 flex flex-col">
+      <div className="w-full max-w-md bg-card rounded-xl shadow-lg m-4 mt-0 sm:m-6 sm:mt-0 md:m-8 md:mt-0 flex flex-col h-[calc(100vh-4rem)] max-h-[700px]">
         <header className="w-full bg-primary text-primary-foreground p-4 rounded-t-xl shadow-md flex items-center justify-between">
           <div className="w-10 h-10"></div> {/* Placeholder for balance */}
           <h2 className="text-xl font-semibold font-headline">เลือกเมนูที่สนใจ</h2>

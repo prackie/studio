@@ -8,8 +8,8 @@ import Link from "next/link";
 
 export default function DmhPage() {
   return (
-    <div className="w-full min-h-screen flex flex-col items-center p-4 bg-background">
-      <Card className="w-full max-w-4xl h-[calc(100vh-6rem)] max-h-[800px] flex flex-col shadow-xl rounded-xl my-8">
+    <div className="w-full min-h-screen flex flex-col items-center bg-background">
+      <Card className="w-full max-w-4xl h-[calc(100vh-6rem)] max-h-[800px] flex flex-col shadow-xl rounded-xl">
         <CardHeader className="flex flex-row items-center justify-between bg-primary text-primary-foreground p-4 rounded-t-xl">
           <Link href="/menu">
             <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-primary/80">

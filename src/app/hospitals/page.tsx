@@ -21,8 +21,8 @@ export default function HospitalsPage() {
   // ไม่ต้องประกาศ hospitalsData ตรงนี้แล้ว เพราะเรา import มาแล้ว
 
   return (
-    <div className="w-full min-h-screen flex flex-col items-center p-4 bg-background">
-      <Card className="w-full max-w-3xl shadow-xl rounded-xl my-8">
+    <div className="w-full min-h-screen flex flex-col items-center bg-background">
+      <Card className="w-full max-w-3xl shadow-xl rounded-xl">
         <CardHeader className="flex flex-row items-center justify-between bg-primary text-primary-foreground p-4 rounded-t-xl">
           <Link href="/menu" passHref>
             <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-primary/80">
